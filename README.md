@@ -19,6 +19,11 @@ https://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html
 https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html
 https://arcolinux.com/how-to-autostart-any-application-on-any-linux-desktop/
 
+
+## Wireguard
+https://www.wireguardconfig.com/
+https://nixvsevil.com/posts/wireguard-in-proxmox-lxc/
+
 ## Proxmox Assign Bind Mount To Unprivileged Container
 In order for the LXC container to have full access the proxmox host directory, a subgid is set as owner of a host directory, and an ACL is used to ensure permissions.
 ### Bind Mount dataset to LXC
@@ -57,9 +62,6 @@ usermod -aG <GroupName> <User>
 
 You should now be able to make modifications to the assigned directory on the host system from within the unpriviliged container.
 
----
-## References
-https://blog.felixbrucker.com/2015/10/01/how-to-mount-host-directories-inside-a-proxmox-lxc-container/
-https://www.reddit.com/r/homelab/comments/4h0erv/resolving_permissions_issues_with_host_bind/
 
-Don't forget port forwarding if want outside access
+
+
