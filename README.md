@@ -1,1 +1,65 @@
 # Links and information for proxmox and truenas
+
+## Some requirements
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install software-properties-common
+symlink
+install gpg
+## Samba container discovery
+https://ghost.canaletto.fr/partage-smb-sous-proxmox/
+
+## Reception sous VM
+https://wiki.samba.org/index.php/Mounting_samba_shares_from_a_unix_client for mounting on startup using fstab (requires some options to not lock)
+
+## Automated services using systemd
+https://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html
+
+## Automated applications on startup with gui using Desktop files
+https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html
+https://arcolinux.com/how-to-autostart-any-application-on-any-linux-desktop/
+
+## Proxmox Assign Bind Mount To Unprivileged Container
+In order for the LXC container to have full access the proxmox host directory, a subgid is set as owner of a host directory, and an ACL is used to ensure permissions.
+### Bind Mount dataset to LXC
+Add the following line to /etc/pve/lxc/<CT_ID>.conf
+```
+mp0:/mount/point/on/host,mp=/mount/point/on/lxc
+```
+
+### Create group on host
+In the default Proxmox configuration, unpriviliged container subgids will have the prefix "10" followed by the expected 4-digit gid.
+``` 
+addgroup --gid <GID (ie."101000")> <GroupName (ie."container-data")>
+```
+
+### Set ACL for shared dataset
+Any members of -GID- will have "rwx", new files from -GID- have "rwx" default
+*Note: documentation suggests the "-d" flag should be used to assign default, however I have been able to get the desired result without, so... take that as you will*
+```
+chgrp -R <GroupName> <Dataset>
+chmod -R 2775 <Dataset>
+setfacl -Rm g:<GID>:rwx,d:g:<GID>:rwx <Dataset>
+```
+
+---
+## Inside your LXC container
+### Create group
+GID needs to match the last 4 digits of the subgid assigned earlier
+```
+addgroup --gid <GID (ie."1000")> <GroupName (ie."container-data")>
+```
+
+### Add users to new permitted group
+```
+usermod -aG <GroupName> <User>
+```
+
+You should now be able to make modifications to the assigned directory on the host system from within the unpriviliged container.
+
+---
+## References
+https://blog.felixbrucker.com/2015/10/01/how-to-mount-host-directories-inside-a-proxmox-lxc-container/
+https://www.reddit.com/r/homelab/comments/4h0erv/resolving_permissions_issues_with_host_bind/
+
+Don't forget port forwarding if want outside access
