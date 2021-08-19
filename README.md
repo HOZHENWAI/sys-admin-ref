@@ -25,6 +25,8 @@ https://www.wireguardconfig.com/
 https://nixvsevil.com/posts/wireguard-in-proxmox-lxc/
 
 ## Proxmox Assign Bind Mount To Unprivileged Container
+https://pve.proxmox.com/wiki/ZFS:_Tips_and_Tricks#LXC_with_ACL_on_ZFS (may need to set zfs acl)
+
 In order for the LXC container to have full access the proxmox host directory, a subgid is set as owner of a host directory, and an ACL is used to ensure permissions.
 ### Bind Mount dataset to LXC
 Add the following line to /etc/pve/lxc/<CT_ID>.conf
