@@ -8,8 +8,12 @@ symlink
 install gpg
 ## Samba container discovery
 https://ghost.canaletto.fr/partage-smb-sous-proxmox/
+
 https://linuxize.com/post/how-to-list-groups-in-linux/
+
 https://pve.proxmox.com/wiki/Unprivileged_LXC_containers
+
+
 ## Reception sous VM
 https://wiki.samba.org/index.php/Mounting_samba_shares_from_a_unix_client for mounting on startup using fstab (requires some options to not lock)
 
