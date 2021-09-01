@@ -24,6 +24,10 @@ https://patrakov.blogspot.com/2011/01/writing-systemd-service-files.html
 https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html
 https://arcolinux.com/how-to-autostart-any-application-on-any-linux-desktop/
 
+#VPN in container and linux
+https://wiki.archlinux.org/title/OpenVPN#DNS
+https://technotipsy.com/linux/check-for-dns-leaks-on-a-headless-linux-server/
+https://developer-old.gnome.org/NetworkManager/stable/nmcli.html
 
 ## Wireguard
 https://www.wireguardconfig.com/
