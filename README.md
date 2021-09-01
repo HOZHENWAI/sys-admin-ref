@@ -28,6 +28,7 @@ https://arcolinux.com/how-to-autostart-any-application-on-any-linux-desktop/
 https://wiki.archlinux.org/title/OpenVPN#DNS
 https://technotipsy.com/linux/check-for-dns-leaks-on-a-headless-linux-server/
 https://developer-old.gnome.org/NetworkManager/stable/nmcli.html
+https://www.maketecheasier.com/connect-vpn-automatically-linux/
 
 ## Wireguard
 https://www.wireguardconfig.com/
