@@ -34,6 +34,9 @@ https://www.maketecheasier.com/connect-vpn-automatically-linux/
 https://www.wireguardconfig.com/
 https://nixvsevil.com/posts/wireguard-in-proxmox-lxc/
 
+# Synchronization du temps sous ubuntu
+https://www.howtogeek.com/tips/how-to-sync-your-linux-server-time-with-network-time-servers-ntp/
+
 ## Proxmox Assign Bind Mount To Unprivileged Container
 https://pve.proxmox.com/wiki/ZFS:_Tips_and_Tricks#LXC_with_ACL_on_ZFS (may need to set zfs acl)
 
