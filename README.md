@@ -1,11 +1,13 @@
 # Links and information for proxmox and truenas
 
 ## Some requirements
-  sudo apt-get update
-  sudo apt-get upgrade
-  sudo apt-get install software-properties-common
-  symlink
-  install gpg
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install software-properties-common
+```
+symlink
+install gpg
 ## Samba container discovery
 https://ghost.canaletto.fr/partage-smb-sous-proxmox/
 
