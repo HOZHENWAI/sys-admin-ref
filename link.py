@@ -32,7 +32,7 @@ if __name__=="__main__":
         try:
             os.mkdir(args.new_path)
         except:
-        pass
+            pass
     try:
       link_path(args.old_path, args.new_path)
     except Exception as e:
